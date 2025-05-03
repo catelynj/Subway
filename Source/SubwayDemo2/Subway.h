@@ -16,8 +16,8 @@ public:
 	// Sets default values for this actor's properties
 	ASubway();
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
-	ACharacter* Character = nullptr;
+	/*UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	ACharacter* Character = nullptr;*/
 
 protected:
 	// Called when the game starts or when spawned

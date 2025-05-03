@@ -3,12 +3,17 @@
 
 #include "SubwayCharacter.h"
 #include "GameFramework/Actor.h"
+#include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values
 ASubwayCharacter::ASubwayCharacter()
 {
 	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bStartWithTickEnabled = true;
+
+	// Set Capsule Size
+	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 
 	// Configure character movement
 	GetCharacterMovement()->bOrientRotationToMovement = true;	
