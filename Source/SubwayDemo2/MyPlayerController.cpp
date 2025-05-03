@@ -38,8 +38,22 @@ void AMyPlayerController::OnMovement(const FInputActionValue& value)
 	FVector2D MovementVector = value.Get<FVector2D>();
 
 	APawn* CharPawn = GetPawn();
+
 	if (CharPawn != nullptr) {
-		CharPawn->AddMovementInput(FVector(MovementVector.X, MovementVector.Y, 0) * 10.0f);
+
+		// Find forward
+		const FRotator Rotation = CharPawn->GetControlRotation();
+		const FRotator YawRotation(0, Rotation.Yaw, 0);
+
+		// Get Forward Vector
+		const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+
+		// Get Right Vector
+		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+
+		// Move Character Pawn
+		CharPawn->AddMovementInput(ForwardDirection, MovementVector.Y);
+		CharPawn->AddMovementInput(RightDirection, MovementVector.X);
 	}
 }
 
@@ -47,7 +61,9 @@ void AMyPlayerController::OnMovement(const FInputActionValue& value)
 void AMyPlayerController::OnLook(const FInputActionValue& value)
 {
 	FVector2D LookAxisVector = value.Get<FVector2D>();
+
 	APawn* CharPawn = GetPawn();
+
 	if (CharPawn != nullptr) {
 		CharPawn->AddControllerYawInput(LookAxisVector.X);
 		CharPawn->AddControllerPitchInput(LookAxisVector.Y);

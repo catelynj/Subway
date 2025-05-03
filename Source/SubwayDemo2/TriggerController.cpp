@@ -3,7 +3,6 @@
 
 #include "TriggerController.h"
 #include "Engine/PointLight.h"
-#include "SubwayDemo2Character.h"
 #include "Components/AudioComponent.h"
 #include "GameFramework/Actor.h"
 #include "Kismet/GameplayStatics.h"

@@ -6,7 +6,7 @@
 
 ASubwayDemo2GameMode::ASubwayDemo2GameMode()
 {
-	//Use custome Controller Class
+	//Use custom Controller Class
 	PlayerControllerClass = AMyPlayerController::StaticClass();
 
 	// set default pawn class

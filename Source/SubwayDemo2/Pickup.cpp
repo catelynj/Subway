@@ -2,7 +2,7 @@
 
 
 #include "Pickup.h"
-#include "SubwayDemo2Character.h"
+#include "SubwayCharacter.h"
 
 // Sets default values
 APickup::APickup()
@@ -35,7 +35,7 @@ void APickup::OnPickupBeginOverlap(AActor* OverlappedActor, AActor* OtherActor) 
 	}
 
 	if (Character == nullptr) {
-		auto player = Cast<ASubwayDemo2Character>(character);
+		auto player = Cast<ASubwayCharacter>(character);
 
 		if (player != nullptr) {
 			Character = character;

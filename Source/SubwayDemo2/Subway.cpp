@@ -2,7 +2,7 @@
 
 
 #include "Subway.h"
-#include "SubwayDemo2Character.h"
+#include "SubwayCharacter.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 // Sets default values

@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/Character.h"
-#include "SubwayDemo2Character.h"
+#include "SubwayCharacter.h"
 #include "Pickup.generated.h"
 
 UCLASS()
